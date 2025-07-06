@@ -50,6 +50,10 @@ export default function PasswordScreen() {
               justifyContent: "space-between",
               height: "100%",
             }}
+            showsVerticalScrollIndicator={false}
+            keyboardShouldPersistTaps="handled"
+            automaticallyAdjustKeyboardInsets
+            keyboardDismissMode="none"
           >
             <View>
               <ThemedText variant="h2" style={{ marginBottom: 16 }}>

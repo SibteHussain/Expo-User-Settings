@@ -44,10 +44,7 @@ export default function NotificationsScreen() {
 
   return (
     <ScreenWrapper>
-      <ScrollView
-        style={{ flex: 1 }}
-        contentContainerStyle={{ paddingVertical: SPACING.lg }}
-      >
+      <ScrollView style={{ flex: 1 }}>
         <View
           style={{
             flexDirection: "row",
