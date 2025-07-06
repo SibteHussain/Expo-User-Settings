@@ -20,7 +20,7 @@ export default function ScreenWrapper({
   safeAreaEdges = ["top", "bottom", "left", "right"],
   backgroundColor,
   paddingHorizontal = wp(5),
-  paddingVertical = hp(2),
+  paddingVertical = hp(0),
 }: ScreenWrapperProps) {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? "light"];

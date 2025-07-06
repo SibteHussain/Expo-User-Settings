@@ -18,7 +18,16 @@ type FontWeight =
   | "900";
 
 interface ThemedTextProps extends TextProps {
-  variant?: "h1" | "h2" | "h3" | "h4" | "body" | "caption" | "button";
+  variant?:
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "body"
+    | "caption"
+    | "button"
+    | "underlined"
+    | "italic";
   color?: string;
   weight?: FontWeight;
   align?: "auto" | "left" | "right" | "center" | "justify";
@@ -113,5 +122,11 @@ const styles = StyleSheet.create({
     lineHeight: fontScale(24),
     textTransform: "uppercase",
     letterSpacing: 0.5,
+  },
+  underlined: {
+    textDecorationLine: "underline",
+  },
+  italic: {
+    fontStyle: "italic",
   },
 });

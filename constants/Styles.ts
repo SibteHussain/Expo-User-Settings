@@ -217,8 +217,10 @@ export const COMPONENTS = StyleSheet.create({
   listItemWithIcon: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: SPACING.md,
+    borderRadius: BORDER_RADIUS.md,
+    paddingVertical: SPACING.xl,
     paddingHorizontal: SPACING.lg,
+    marginVertical: SPACING.xs,
   },
 
   // Divider styles
@@ -266,8 +268,8 @@ export const COMPONENTS = StyleSheet.create({
     borderRadius: BORDER_RADIUS.round,
   },
   avatarLarge: {
-    width: wp(20),
-    height: wp(20),
+    width: wp(30),
+    height: wp(30),
     borderRadius: BORDER_RADIUS.round,
   },
 });
@@ -308,6 +310,10 @@ export const TEXT = StyleSheet.create({
 
 // Common icon styles
 export const ICONS = StyleSheet.create({
+  xsmall: {
+    width: wp(3),
+    height: wp(3),
+  },
   small: {
     width: wp(5),
     height: wp(5),
