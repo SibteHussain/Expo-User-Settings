@@ -104,26 +104,17 @@ export default function PersonalInformationScreen() {
                 error={touched.email && errors.email ? errors.email : undefined}
               />
 
-              <DatePickerModal />
-              {/* <Input
+              <DatePickerModal
                 label="Birthday"
-                placeholder="00 / 00 / 0000"
                 value={values.birthday}
-                onChangeText={handleChange("birthday")}
-                onBlur={handleBlur("birthday")}
+                onValueChange={(value) => setFieldValue("birthday", value)}
                 error={
                   touched.birthday && errors.birthday
                     ? errors.birthday
                     : undefined
                 }
-                style={{ paddingRight: 40 }}
-                rightIcon={
-                  <Image
-                    source={require("../../../assets/icons/Calendar.svg")}
-                    style={[ICONS.medium, { tintColor: colors.icon }]}
-                  />
-                }
-              /> */}
+              />
+
               <Select
                 label="Gender"
                 value={values.gender}
