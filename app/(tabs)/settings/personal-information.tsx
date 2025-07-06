@@ -104,16 +104,7 @@ export default function PersonalInformationScreen() {
                 error={touched.email && errors.email ? errors.email : undefined}
               />
 
-              <DatePickerModal
-                label="Birthday"
-                value={values.birthday}
-                onValueChange={(value) => setFieldValue("birthday", value)}
-                error={
-                  touched.birthday && errors.birthday
-                    ? errors.birthday
-                    : undefined
-                }
-              />
+              <DatePickerModal />
 
               <Select
                 label="Gender"
