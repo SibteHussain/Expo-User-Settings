@@ -31,12 +31,10 @@ function HeaderWithDivider({ title, colors }: { title: string; colors: any }) {
 
   return (
     <View style={{ backgroundColor: colors.background }}>
-      {/* Status bar spacer */}
       <View
         style={{ height: insets.top, backgroundColor: colors.background }}
       />
 
-      {/* Header content */}
       <View
         style={{
           alignItems: "center",
@@ -105,7 +103,7 @@ export default function SettingsLayout() {
         name="index"
         options={{
           title: "Settings",
-          headerShown: true,
+          headerShown: false,
         }}
       />
       <Stack.Screen
@@ -153,6 +151,24 @@ export default function SettingsLayout() {
           headerShown: true,
           header: () => (
             <HeaderWithDivider title="Delete Account" colors={colors} />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="forgot-password"
+        options={{
+          title: "Password",
+          headerShown: true,
+          header: () => <HeaderWithDivider title="Password" colors={colors} />,
+        }}
+      />
+      <Stack.Screen
+        name="create-new-password"
+        options={{
+          title: "Create New Password",
+          headerShown: true,
+          header: () => (
+            <HeaderWithDivider title="Create New Password" colors={colors} />
           ),
         }}
       />

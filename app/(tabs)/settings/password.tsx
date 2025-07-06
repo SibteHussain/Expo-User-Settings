@@ -1,3 +1,5 @@
+import { Image } from "expo-image";
+import { router } from "expo-router";
 import { Formik } from "formik";
 import React, { useState } from "react";
 import { ScrollView, TouchableOpacity, View } from "react-native";
@@ -7,7 +9,7 @@ import Input from "../../../components/Input";
 import ScreenWrapper from "../../../components/ScreenWrapper";
 import ThemedText from "../../../components/ThemedText";
 import { Colors } from "../../../constants/Colors";
-import { SPACING } from "../../../constants/Styles";
+import { ICONS, SPACING } from "../../../constants/Styles";
 import { useColorScheme } from "../../../hooks/useColorScheme";
 
 const validationSchema = Yup.object().shape({
@@ -47,10 +49,11 @@ export default function PasswordScreen() {
           touched,
         }) => (
           <ScrollView
-            style={{ flexDirection: "column" }}
-            contentContainerStyle={{ justifyContent: "space-between" }}
+            contentContainerStyle={{
+              justifyContent: "space-between",
+            }}
           >
-            <View style={{ paddingTop: SPACING.lg }}>
+            <View>
               <ThemedText variant="h2" style={{ marginBottom: SPACING.xs }}>
                 Change password
               </ThemedText>
@@ -102,6 +105,7 @@ export default function PasswordScreen() {
               />
               <TouchableOpacity
                 style={{ marginTop: SPACING.sm, marginBottom: SPACING.lg }}
+                onPress={() => router.push("/settings/forgot-password" as any)}
               >
                 <ThemedText
                   variant="body"
@@ -129,22 +133,16 @@ export default function PasswordScreen() {
                     borderRadius: 6,
                     borderWidth: 2,
                     borderColor: colors.text,
-                    backgroundColor: logoutOtherDevices
-                      ? colors.tint
-                      : "transparent",
+                    backgroundColor: "black",
                     marginRight: SPACING.md,
                     alignItems: "center",
                     justifyContent: "center",
                   }}
                 >
                   {logoutOtherDevices && (
-                    <View
-                      style={{
-                        width: 12,
-                        height: 12,
-                        borderRadius: 3,
-                        backgroundColor: "#fff",
-                      }}
+                    <Image
+                      source={require("../../../assets/icons/check-mark.svg")}
+                      style={[ICONS.small, { tintColor: colors.icon }]}
                     />
                   )}
                 </View>

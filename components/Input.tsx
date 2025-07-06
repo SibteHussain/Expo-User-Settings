@@ -29,6 +29,7 @@ export default function Input({
     color: colors.text,
     fontSize: 16,
     paddingHorizontal: SPACING.lg,
+    marginVertical: SPACING.md,
     paddingVertical: SPACING.md,
     paddingRight: rightIcon ? 40 + SPACING.lg * 2 : SPACING.lg,
     backgroundColor: colorScheme === "dark" ? "#373A37" : "#E0E0E0",
