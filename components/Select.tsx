@@ -16,6 +16,7 @@ interface SelectProps {
   items: { label: string; value: string }[];
   enabled?: boolean;
   pickerProps?: any;
+  customStyle?: ViewStyle;
 }
 
 export default function Select({
@@ -28,6 +29,7 @@ export default function Select({
   items,
   enabled = true,
   pickerProps,
+  customStyle = {},
 }: SelectProps) {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? "light"];
@@ -94,15 +96,18 @@ export default function Select({
         </Picker>
         {rightIcon && (
           <View
-            style={{
-              position: "absolute",
-              right: SPACING.lg,
-              top: 0,
-              bottom: 0,
-              justifyContent: "center",
-              alignItems: "center",
-              width: 24,
-            }}
+            style={[
+              customStyle,
+              {
+                position: "absolute",
+                right: SPACING.lg,
+                top: 0,
+                bottom: 0,
+                justifyContent: "center",
+                alignItems: "center",
+                width: 24,
+              },
+            ]}
           >
             {rightIcon !== null ? rightIcon : null}
           </View>

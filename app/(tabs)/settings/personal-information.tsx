@@ -1,3 +1,4 @@
+import DatePickerModal from "@/components/DatePickerModal";
 import { Image } from "expo-image";
 import { Formik } from "formik";
 import React from "react";
@@ -61,7 +62,12 @@ export default function PersonalInformationScreen() {
           errors,
           touched,
         }) => (
-          <ScrollView showsVerticalScrollIndicator={false}>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            keyboardShouldPersistTaps="handled"
+            automaticallyAdjustKeyboardInsets
+            keyboardDismissMode="none"
+          >
             <View>
               <Input
                 label="First name"
@@ -97,7 +103,9 @@ export default function PersonalInformationScreen() {
                 autoCapitalize="none"
                 error={touched.email && errors.email ? errors.email : undefined}
               />
-              <Input
+
+              <DatePickerModal />
+              {/* <Input
                 label="Birthday"
                 placeholder="00 / 00 / 0000"
                 value={values.birthday}
@@ -115,7 +123,7 @@ export default function PersonalInformationScreen() {
                     style={[ICONS.medium, { tintColor: colors.icon }]}
                   />
                 }
-              />
+              /> */}
               <Select
                 label="Gender"
                 value={values.gender}
@@ -127,9 +135,10 @@ export default function PersonalInformationScreen() {
                 rightIcon={
                   <Image
                     source={require("../../../assets/icons/ChevronDown.svg")}
-                    style={[ICONS.small, { tintColor: colors.icon }]}
+                    style={[ICONS.xsmall, { tintColor: colors.icon }]}
                   />
                 }
+                customStyle={{ marginRight: SPACING.sm }}
               />
               <Select
                 label="Country"
@@ -142,9 +151,10 @@ export default function PersonalInformationScreen() {
                 rightIcon={
                   <Image
                     source={require("../../../assets/icons/ChevronDown.svg")}
-                    style={[ICONS.small, { tintColor: colors.icon }]}
+                    style={[ICONS.xsmall, { tintColor: colors.icon }]}
                   />
                 }
+                customStyle={{ marginRight: SPACING.sm }}
               />
               <Button
                 title="Save"

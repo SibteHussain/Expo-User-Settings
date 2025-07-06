@@ -1,3 +1,4 @@
+import { hp } from "@/utils/responsive";
 import { Image } from "expo-image";
 import { router } from "expo-router";
 import { Formik } from "formik";
@@ -48,11 +49,7 @@ export default function PasswordScreen() {
           errors,
           touched,
         }) => (
-          <ScrollView
-            contentContainerStyle={{
-              justifyContent: "space-between",
-            }}
-          >
+          <ScrollView contentContainerStyle={{ paddingBottom: hp(5) }}>
             <View>
               <ThemedText variant="h2" style={{ marginBottom: SPACING.xs }}>
                 Change password

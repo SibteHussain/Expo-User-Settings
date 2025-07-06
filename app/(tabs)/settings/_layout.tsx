@@ -92,8 +92,8 @@ export default function SettingsLayout() {
           color: colors.text,
         },
         headerTitleAlign: "center",
-        presentation: "card",
-        animation: "slide_from_right",
+        presentation: "transparentModal",
+        // animation: "slide_from_right",
         contentStyle: {
           backgroundColor: colors.background,
         },
