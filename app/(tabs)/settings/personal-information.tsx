@@ -61,7 +61,7 @@ export default function PersonalInformationScreen() {
           errors,
           touched,
         }) => (
-          <ScrollView>
+          <ScrollView showsVerticalScrollIndicator={false}>
             <View>
               <Input
                 label="First name"

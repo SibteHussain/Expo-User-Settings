@@ -45,6 +45,7 @@ export default function Select({
     paddingRight: 40 + SPACING.lg,
     justifyContent: "center",
     minHeight: 48,
+    height: 48,
   };
 
   return (
@@ -80,6 +81,7 @@ export default function Select({
             fontSize: 16,
           }}
           dropdownIconColor={colorScheme === "dark" ? "#373A37" : "black"}
+          dropdownIconRippleColor={colorScheme === "dark" ? "#373A37" : "black"}
           {...pickerProps}
         >
           {items.map((item) => (
