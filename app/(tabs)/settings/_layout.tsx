@@ -1,6 +1,6 @@
 import { Image } from "expo-image";
 import { Stack, useRouter } from "expo-router";
-import { Pressable, View } from "react-native";
+import { Platform, Pressable, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import ThemedText from "../../../components/ThemedText";
 import { Colors } from "../../../constants/Colors";
@@ -30,9 +30,17 @@ function HeaderWithDivider({ title, colors }: { title: string; colors: any }) {
   );
 
   return (
-    <View style={{ backgroundColor: colors.background }}>
+    <View
+      style={{
+        backgroundColor: colors.background,
+        paddingBottom: Platform.OS === "ios" ? 20 : 0,
+      }}
+    >
       <View
-        style={{ height: insets.top, backgroundColor: colors.background }}
+        style={{
+          height: insets.top,
+          backgroundColor: colors.background,
+        }}
       />
 
       <View
